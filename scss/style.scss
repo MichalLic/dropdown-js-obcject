@@ -1,0 +1,46 @@
+@import "bootstrap.min";
+
+#dropdown-menu .dropdown {
+    background-color: indianred;
+    text-align: center;
+    padding: 0;
+}
+
+a {
+    display: inline-block;
+    width: 100%;
+    padding: 15px 0;
+    color: #fff !important;
+    &:hover {
+        opacity: 0.5;
+        text-decoration: none;
+        background-color: palevioletred;
+    }
+}
+
+.dropdown-parent {
+    position: relative;
+    .dropdown-content {
+        display: none;
+    }
+}
+
+.dropdown-parent.active > .dropdown-content {
+    display: block;
+}
+
+@media (min-width: 980px) {
+    .dropdown-parent .level2-list {
+        position: absolute;
+        background-color: indianred;
+        left: 100%;
+        top: 0;
+        width: 247px;
+        &.on-left {
+            left: auto;
+            top: 0;
+            right: 100%;
+        }
+    }
+}
+
