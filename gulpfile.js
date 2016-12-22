@@ -9,11 +9,11 @@ var $ = require('gulp-load-plugins')();
 // Styles (SCSS + autoprefixer + minify)
 // ======================================================
 gulp.task('styles', function () {
-    return gulp.src('./scss/**/*.scss')
+    return gulp.src('./src/styles/**/*.scss')
         .pipe($.sass.sync())
         .pipe($.autoprefixer({browsers: ['last 10 version']}))
         .pipe($.csso())
-        .pipe(gulp.dest('./css/'))
+        .pipe(gulp.dest('./dist/css/'))
         .pipe(browserSync.reload({stream: true}));
 });
 
@@ -21,8 +21,8 @@ gulp.task('styles', function () {
 // Watch
 gulp.task('watch', function () {
 
-// Watch .scss files
-    gulp.watch('./scss/**/*.scss', ['styles']);
+// Watch .styles files
+    gulp.watch('./src/styles/**/*.scss', ['styles']);
 
     // // Watch .js files
     //gulp.watch('./js/*.js', ['js']);
@@ -45,8 +45,8 @@ gulp.task('serve', function() {
         }
     });
 
-    // Watch .scss files
-    gulp.watch('./scss/**/*.scss', ['styles']);
+    // Watch .styles files
+    gulp.watch('./src/styles/**/*.scss', ['styles']);
 
     // // Watch .js files
     //gulp.watch('./js/*.js', ['js']);
